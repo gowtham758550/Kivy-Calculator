@@ -9,5 +9,6 @@
 
 A simple calculator made with python kivy.
 
+![](https://github.com/gowtham758550/Kivy-Calculator/blob/master/Demo/gif.gif)
 
 
