@@ -1,0 +1,110 @@
+<Style1@Button>:
+    font_size: 100
+    background_color: rgba('#254A95')
+    color: rgba('#ffffff')
+    
+<Style2@Button>:
+	font_size: 100
+	background_color: [1, 0, 0, 1]
+	color: [1, 1, 1, 1]
+	
+<Style3@Button>:
+	font_size: 100
+	background_color: [0, 0, 0, 0]
+	color: [1, 1, 1, 1]
+	
+<Style4@Button>:
+	font_size: 100
+	background_color: rgba('#FF53AA')
+	color: [1, 1, 1, 1]
+	
+<CalcGridLayout>:
+    id: calculator
+    display: entry
+    rows: 10
+    padding: 10
+    spacing: 10
+ 
+    
+    BoxLayout:
+        TextInput:
+            id: entry
+            font_size: 100
+            multiline: False
+       
+    BoxLayout:
+        spacing: 10
+        Style4:
+            text: "C"
+            on_press: entry.text = ""
+        Style4:
+            text: "DEL"
+            on_press: calculator.delete(entry.text)
+        Style4:
+            text: "%"
+            on_press: entry.text += self.text
+        Style3:
+            text: "Exit"
+            on_press: calculator.stop()
+ 
+    BoxLayout:
+        spacing: 10
+        Style1:
+            text: "7"
+            on_press: entry.text += self.text
+        Style1:
+            text: "8"
+            on_press: entry.text += self.text
+        Style1:
+            text: "9"
+            on_press: entry.text += self.text
+        Style2:
+            text: "/"
+            on_press: entry.text += self.text
+ 
+    BoxLayout:
+        spacing: 10
+        Style1:
+            text: "4"
+            on_press: entry.text += self.text
+        Style1:
+            text: "5"
+            on_press: entry.text += self.text
+        Style1:
+            text: "6"
+            on_press: entry.text += self.text
+        Style2:
+            text: "*"
+            on_press: entry.text += self.text
+ 
+    
+    BoxLayout:
+        spacing: 10
+        Style1:
+            text: "1"
+            on_press: entry.text += self.text
+        Style1:
+            text: "2"
+            on_press: entry.text += self.text
+        Style1:
+            text: "3"
+            on_press: entry.text += self.text
+        Style2:
+            text: "-"
+            on_press: entry.text += self.text
+   
+    BoxLayout:
+    	spacing: 10
+    	Style1:
+    		text: '0'
+    		on_press: entry.text += self.text
+    	Style1:
+    		text: '.'
+    		on_press: entry.text += self.text
+    	Style3:
+    		text: '='
+    		on_press: calculator.calculate(entry.text)
+    	Style2:
+    		text: '+'
+    		on_press: entry.text += self.text
+    	
